@@ -159,7 +159,7 @@ class CliTests(unittest.TestCase):
         wa = os.path.join(HERE, "examples", "hafta-sonu.txt")
         code, out, _ = self.run_main("stats", vtt)
         self.assertEqual(code, 0)
-        self.assertIn("Priya Nair", out)
+        self.assertIn("Deniz Arslan", out)
         code, out, _ = self.run_main("convert", wa)
         doc = json.loads(out)
         self.assertEqual(doc["format"], "whatsapp")

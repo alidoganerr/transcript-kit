@@ -6,9 +6,9 @@ Supported: WebVTT as Zoom and Teams export it, SRT, WhatsApp chat exports (iPhon
 
 Example report: [a team call](https://alidoganerr.github.io/transcript-kit/) and [a WhatsApp group](https://alidoganerr.github.io/transcript-kit/hafta-sonu.html). Both transcripts are made up; they're in `examples/`.
 
-## Running it
+## Usage
 
-Python 3.9+, standard library only.
+Needs Python 3.9 or later, nothing else.
 
 ```
 python3 transcript_kit.py stats examples/team-sync.vtt
@@ -20,11 +20,11 @@ python3 transcript_kit.py report examples/team-sync.vtt -o report.html
 team-sync.vtt (vtt, 9 turns, 161 words, 1:06)
 
 speaker                   share  turns  words avg/turn  longest    ?
-Priya Nair                38.5%      4     62     15.5       25    5
-Lena Ortiz                36.6%      2     59     29.5       37    2
-Tom Becker                24.8%      3     40     13.3       32    0
+Deniz Arslan              38.5%      4     62     15.5       25    5
+Elif Kaya                 36.6%      2     59     29.5       37    2
+Burak Şen                 24.8%      3     40     13.3       32    0
 
-Longest turn: Lena Ortiz, 37 words at 0:25
+Longest turn: Elif Kaya, 37 words at 0:25
 ```
 
 The format is detected from the extension and the first lines; `--format vtt|srt|whatsapp|text` overrides it. `--rename "Speaker 1=Ayşe"` fixes names the recorder got wrong, and can be repeated. `stats --json` prints the numbers instead of the table.
@@ -36,7 +36,7 @@ The format is detected from the extension and the first lines; `--format vtt|srt
  "source": "team-sync.vtt",
  "format": "vtt",
  "turns": [
-  {"speaker": "Priya Nair", "start": 2.12, "end": 9.3, "text": "Okay, I think everyone's here. ..."}
+  {"speaker": "Deniz Arslan", "start": 2.12, "end": 9.3, "text": "Okay, I think everyone's here. ..."}
  ]
 }
 ```
@@ -53,6 +53,4 @@ A few things to know:
 - In WhatsApp exports, system lines (encryption notice, someone joined) and "media omitted" lines are dropped. Other lines without a date are treated as the rest of the previous message.
 - Any line that looks like `Name: text` is read as a new speaker, in every format. A sentence like "Note: we moved the date" becomes a speaker called Note.
 
-Tests: `python3 -m unittest`
-
-Ali Doğaner. MIT licensed.
+Tests: `python3 -m unittest`. MIT licensed.
