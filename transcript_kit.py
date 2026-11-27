@@ -327,7 +327,7 @@ def _write(path, text):
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(prog="transcript_kit", description=__doc__.splitlines()[0])
+    ap = argparse.ArgumentParser(prog="transcript-kit", description=__doc__.splitlines()[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
     for name, what in (("convert", "write the transcript as JSON"),
                        ("stats", "print talk share, turns and questions per speaker"),
