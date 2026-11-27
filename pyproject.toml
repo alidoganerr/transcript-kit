@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transcript-kit"
+version = "0.1.1"
+description = "Converts Zoom, Teams, SRT and WhatsApp transcripts to JSON and counts who talked how much."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+
+[project.scripts]
+transcript-kit = "transcript_kit:main"
+
+[project.urls]
+Homepage = "https://github.com/alidoganerr/transcript-kit"
+
+[tool.setuptools]
+py-modules = ["transcript_kit"]

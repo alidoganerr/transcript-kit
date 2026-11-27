@@ -1,20 +1,28 @@
 # transcript-kit
 
+[![test](https://github.com/alidoganerr/transcript-kit/actions/workflows/test.yml/badge.svg)](https://github.com/alidoganerr/transcript-kit/actions/workflows/test.yml) [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
 Reads meeting and chat transcripts in the formats they usually come in, writes them out as one JSON shape, and counts who talked how much.
 
 Supported: WebVTT as Zoom and Teams export it, SRT, WhatsApp chat exports (iPhone and Android, Turkish or English phone settings) and plain `Name: text` files with or without `[mm:ss]` stamps.
 
 Example report: [a team call](https://alidoganerr.github.io/transcript-kit/) and [a WhatsApp group](https://alidoganerr.github.io/transcript-kit/hafta-sonu.html). Both transcripts are made up; they're in `examples/`.
 
+![Report for the example team call](docs/report.png)
+
 ## Usage
 
-Needs Python 3.9 or later, nothing else.
+```
+pipx install git+https://github.com/alidoganerr/transcript-kit
+```
 
 ```
-python3 transcript_kit.py stats examples/team-sync.vtt
-python3 transcript_kit.py convert examples/hafta-sonu.txt -o chat.json
-python3 transcript_kit.py report examples/team-sync.vtt -o report.html
+transcript-kit stats examples/team-sync.vtt
+transcript-kit convert examples/hafta-sonu.txt -o chat.json
+transcript-kit report examples/team-sync.vtt -o report.html
 ```
+
+Needs Python 3.9 or later and nothing else. From a clone, `python3 transcript_kit.py` does the same.
 
 ```
 team-sync.vtt (vtt, 9 turns, 161 words, 1:06)
